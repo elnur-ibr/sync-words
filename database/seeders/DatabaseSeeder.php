@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Authorization;
+use App\Models\Event;
+use App\Models\Organization;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Auth;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +15,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        Event::factory([
+            'organization_id' => $organization = Organization::factory()->create()
+        ])->count(3)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Authorization::factory()->create([
+            'organization_id' => $organization
+        ]);
+
+        Event::factory([
+            'organization_id' => $organization = Organization::factory()->create()
+        ])->count(10)->create();
+
+        Authorization::factory()->create([
+            'organization_id' => $organization
+        ]);
+
+        Event::factory([
+            'organization_id' => $organization = Organization::factory()->create()
+        ])->count(20)->create();
+
+        Authorization::factory()->create([
+            'organization_id' => $organization
+        ]);
     }
 }
