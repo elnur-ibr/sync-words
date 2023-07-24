@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//TODO delete
+Route::get('test', function () {
+    dd(
+        now()->subDays(3),
+
+    );
 });
