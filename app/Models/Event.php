@@ -12,6 +12,12 @@ class Event extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'start_date',
+        'end_date',
+    ];
+
     /**
      * The "booted" method of the model.
      */
