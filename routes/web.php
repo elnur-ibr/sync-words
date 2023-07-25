@@ -12,11 +12,3 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-//TODO delete
-Route::get('test', function () {
-    dd(
-        now()->subDays(3),
-
-    );
-});
