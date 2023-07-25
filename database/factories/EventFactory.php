@@ -22,7 +22,7 @@ class EventFactory extends Factory
             'title'           => fake()->text,
             'start_date'      => now()->subDays(3),
             'end_date'        => function(array $attributes) {
-                return (clone $attributes['start_date'])->addWeek();
+                return (clone $attributes['start_date'])->addMinutes(rand(1,12*60));
             },
             'organization_id' => Organization::factory(),
         ];

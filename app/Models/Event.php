@@ -18,6 +18,11 @@ class Event extends Model
         'end_date',
     ];
 
+    protected $casts = [
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',
+    ];
+
     /**
      * The "booted" method of the model.
      */
