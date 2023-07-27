@@ -11,6 +11,7 @@
 - Added global scope to events to make sure all request to database has authorization in body.
 - See `RequireContentTypeJsonTest` for phpunit test with data provider.
 - See `EventPutTest` and `EventPatchTest` for use of `worksome/request-factories` in tests.
+- There is postman collection added to this repo `sync-words.postman_collection.json`.
 
 # Comments
  - Not fan of `organization_id` column in `events` table refering to `authorization` table.
